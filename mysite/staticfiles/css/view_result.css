@@ -1,0 +1,47 @@
+.left{
+position:absolute;
+width:10%;
+height:80%;
+background-color:blue;
+}
+.middle{
+position:absolute;
+margin-left:10%;
+width:80%;
+height:80%;
+background-color:green;
+text-align:center;
+}
+.right{
+position:absolute;
+margin-left:90%;
+width:10%;
+height:80%;
+background-color:yellow;
+}
+
+.centerTable{
+    margin: 0px auto;
+    width:100%;
+}
+.table_button{
+    background-color:yellow;
+    width:100%;
+}
+.selector{
+    width:25%;
+}
+
+.tab_border{
+    display:inline-block;
+    vertical-align: top;
+}
+.tab_border td{
+    padding: 12px 12px 12px 12px;
+    border-top:1px solid;
+}
+#for_pie{
+    width:500px;
+    height:300px;
+    background-color:yellow;
+}

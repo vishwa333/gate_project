@@ -1,0 +1,295 @@
+html,body{
+    
+}
+.outside{
+  background-color:green;
+  height:100%;
+  width:100%;
+}
+.level1{
+  position:absolute;
+  display: block;
+  /*background-color:red;*/
+  height:20.5%;
+  width:98%;
+  border: 1px solid red;
+  text-align:center;
+}
+.l1l1{
+    display: block;
+  position:absolute;
+  /*background-color:green;*/
+  top:10%;
+  height:30%;
+  width:98%;
+  text-align:center;
+}
+#title{
+    display: block
+    text-align:center;
+}
+
+.question_box{
+  position:absolute;
+  /*background-color:blue;*/
+  height:54%;
+  width:73%;
+  top:29%;
+  /*border:1px solid;*/
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+.qdetails{
+    position:absolute;
+    height:7%;
+    width:73%;
+    top:22%;
+    background-color:green;
+    text-align: center;
+    margin:auto;
+}
+.qd1{
+  position:absolute;
+  float:left;
+}
+.qmarks{
+  position:absolute;
+  right:2%;
+}
+.qdisplay{
+    margin-top:30px;
+    margin-left:10%;
+}
+.qdisplay td{
+    height:10%;
+}
+.crows{
+    min-height:30px;
+}
+.rbutton{
+    width:40px;
+}
+.question{
+    min-height:80px;
+}
+/*
+.question{
+  position:absolute;
+  top:10%;
+  left:5%;
+}
+.choices{
+  position:relative;
+  top:30%;
+  left:5%;
+}
+.c1{
+  min-height:100px;
+}
+.c2{
+  min-height:100px;
+}
+.c3{
+  min-height:100px;
+}
+.c4{
+  min-height:100px;
+}  */
+
+.level3{
+  position:absolute;
+  /*background-color:yellow;*/
+  height:76%;
+  width:25%;
+  top:22%;
+  margin-left:73%;
+  border:1px solid;
+}
+.l1l1{
+  position:absolute;
+  /*background-color:green;*/
+  top:10%;
+  height:30%;
+}
+.figs{
+  position:absolute;
+  height:40%;
+  width:100%;
+  /*background-color:grey;*/
+  border:1px solid;
+}
+.t1{
+  position:absolute;
+  top:15px;
+  left:20px;
+  background:url('../images/1.png') no-repeat;
+  height:60px;
+  width:60px;
+  text-align:center;
+}
+.t1t1{
+  position:absolute;
+  top:5px;
+  left:25px;
+}
+.t1t2{
+  position:absolute;
+  left:65px;
+  top:5px;;
+}
+.t2{
+  position:absolute;
+  left:170px;
+  top:20px;
+  background:url('../images/2.png') no-repeat;
+  height:60px;
+  width:60px;
+  text-align:center;
+}
+.t2t1{
+  position:absolute;
+  left:25px;
+}
+.t2t2{
+  white-space: nowrap;
+  position:absolute;
+  left:65px;
+}
+.t3{
+  position:absolute;
+  top:80px;
+  left:25px;
+  background:url('../images/3.png') no-repeat;
+  height:60px;
+  width:60px;
+  text-align:center;
+}
+.t3t1{
+  position:absolute;
+  left:20px;
+}
+.t3t2{
+  position:absolute;
+  left:55px;
+  white-space: nowrap;
+}
+.t4{
+  position:absolute;
+  top:80px;
+  left:175px;
+  background:url('../images/4.png') no-repeat;
+  height:60px;
+  width:60px;
+  text-align:center;
+}
+.t4t1{
+  position:absolute;
+  left:20px;
+}
+.t4t2{
+  position:absolute;
+  left:70px;
+  top:-7px;
+  white-space: nowrap;
+}
+.t5{
+  position:absolute;
+  top:130px;
+  left:25px;
+  background:url('../images/5.png') no-repeat;
+  height:60px;
+  width:60px;
+  text-align:center;
+}
+.t5t1{
+  position:absolute;
+  left:23px;
+  top:5px;
+}
+.t5t2{
+  position:absolute;
+  left:55px;
+  top:5px;
+  white-space:nowrap;
+}
+.question_pallet{
+  position:absolute;
+  /*background:red;*/
+
+  top:40%;
+  width:100%;
+  height:50%;
+  margin: 0 auto;
+  text-align:center;
+}
+.qbuttons{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding:40px;
+  /*background-color:green;*/
+  height:60%;
+  border:1px solid;
+}
+.qbuttons a{
+  position: relative;
+  background:url('../images/3.png') no-repeat;
+  height:60px;
+  width:60px;
+  text-align:center;
+}
+.qbuttons a:hover{
+  cursor:pointer;
+}
+.qbuttons p{
+  position:relative;
+  margin-left:-25%;
+}
+
+
+.level4{
+   position:absolute;
+  background-color:white;
+  height:15%;
+  width:73%;
+  top:83%;
+  border:1px solid red;
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+.nbutton_div{
+    margin-left:30%;
+    margin-top:1%;
+}
+.nbutton{
+  background-color: white; /* Green */
+  border:1px solid blue;
+  border-radius: 5px;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.nbutton:hover{
+    background-color: green;
+}
+
+#submit_but{
+  background-color: white; /* Green */
+  border: 2px solid blue;
+  border-radius: 5px;
+  color: black;
+  /*padding: 10px 20px;
+  margin-top:2%;*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  width:100%;
+  height:28%;
+}

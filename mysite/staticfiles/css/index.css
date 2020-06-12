@@ -1,0 +1,16 @@
+.displayname{
+  background-color: #333;
+  color:white;
+  animation: blink 2s ease infinite;
+}
+@keyframes blink{
+  0%{opacity:0;}
+  50%{opacity:1;}
+  100%{opacity:0;}
+}
+
+.w3-bar .active{
+background-color:grey;
+color:black;
+pointer-events: none;
+}

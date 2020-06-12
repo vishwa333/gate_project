@@ -1,0 +1,5 @@
+Creating a project : django-admin startproject mysite
+
+Running a project server for test environment: python manage.py runserver
+
+creating an app inside the project: python manage.py startapp <app_name>

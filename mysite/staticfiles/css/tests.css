@@ -1,0 +1,90 @@
+.show1{
+    display:hidden;
+    margin:5% auto;
+    align:center;
+}
+.types{
+    margin: auto;
+    height:600px;
+    width:1150px;
+    background:orange;
+}
+.tbutton{
+    border:1px solid;
+    margin-left:auto;
+    margin-right:auto;
+}
+.tbutton td{
+    width:220px;
+}
+.types .w3-button{
+width:100%;
+height:50px;
+font-size:20px;
+}
+
+.submenu{
+  background-color: #ffffff;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.types1{
+
+    margin:5% auto;
+    align:center;
+    width:200px;
+    background-color:grey;
+}
+
+.first{
+    margin-left:20px;
+    margin-top:40px;
+    height:550px;
+}
+
+.second{
+    text-align:center;
+    float:left;
+    width:220px;
+}
+.third{
+    text-align:center;
+    float:left;
+}
+
+.filtertab{
+    background-color:green;
+    float:left;
+    width:220px;
+}
+.filtertab tr{
+    height:20px;
+}
+
+#get_tests{
+    margin:5% auto;
+}
+
+
+.teststab{
+    background-color:yellow;
+    float:left;
+    width:890px;
+}
+
+.tests_display{
+    align:top;
+}
+
+.all_tests{
+    border-collapse:collapse;
+    width:890px;
+    align:center;
+    border:1px solid;
+}
+.all_tests tr td{
+    border:1px solid;
+}

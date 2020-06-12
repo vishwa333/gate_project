@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+      .outside{
+        background-color:green;
+        height:100%;
+        width:100%;
+      }
+      .level1{
+        position:absolute;
+        /*background-color:red;*/
+        height:20.5%;
+        width:98%;
+        border: 1px solid red;
+      }
+      .question_box{
+        position:absolute;
+        /*background-color:blue;*/
+        height:69%;
+        width:73%;
+        top:29%;
+        border:1px solid;
+        overflow-y: auto;
+        overflow-x:hidden;
+      }
+      .qdetails{
+        position:absolute;
+        height:7%;
+        width:73%;
+        top:22%;
+        background-color:green;
+        text-align: center;
+        margin:auto;
+      }
+      .qd1{
+        position:absolute;
+        float:left;
+      }
+      .qmarks{
+        position:absolute;
+        right:2%;
+      }
+      .question{
+        position:absolute;
+        top:10%;
+        left:5%;
+      }
+      .choices{
+        position:relative;
+        top:50%;
+        left:5%;
+      }
+      .c1{
+        height:auto;
+      }
+      .c2{
+        height:auto;
+      }
+      .c3{
+        height:auto;
+      }
+      .c4{
+        height:auto;
+      }
+
+      .level3{
+        position:absolute;
+        /*background-color:yellow;*/
+        height:76%;
+        width:25%;
+        top:22%;
+        margin-left:73%;
+        border:1px solid;
+      }
+      .l1l1{
+        position:absolute;
+        /*background-color:green;*/
+        top:70%;
+        height:30%;
+        width:74%;
+      }
+      .figs{
+        position:absolute;
+        height:210px;
+        width:100%;
+        /*background-color:grey;*/
+        border:1px solid;
+      }
+      .t1{
+        position:absolute;
+        top:15px;
+        left:20px;
+        background:url('../../staticfiles/images/1.png') no-repeat;
+        height:60px;
+        width:60px;
+        text-align:center;
+      }
+      .t1t1{
+        position:absolute;
+        top:5px;
+        left:25px;
+      }
+      .t1t2{
+        position:absolute;
+        left:65px;
+        top:5px;;
+      }
+      .t2{
+        position:absolute;
+        left:170px;
+        top:20px;
+        background:url('../../staticfiles/images/2.png') no-repeat;
+        height:60px;
+        width:60px;
+        text-align:center;
+      }
+      .t2t1{
+        position:absolute;
+        left:25px;
+      }
+      .t2t2{
+        white-space: nowrap;
+        position:absolute;
+        left:65px;
+      }
+      .t3{
+        position:absolute;
+        top:80px;
+        left:25px;
+        background:url('../../staticfiles/images/3.png') no-repeat;
+        height:60px;
+        width:70px;
+        text-align:center;
+
+      }
+      .t3t1{
+        position:absolute;
+        left:20px;
+      }
+      .t3t2{
+        position:absolute;
+        left:55px;
+        white-space: nowrap;
+      }
+      .t4{
+        position:absolute;
+        top:80px;
+        left:175px;
+        background:url('../../staticfiles/images/4.png') no-repeat;
+        height:60px;
+        width:70px;
+        text-align:center;
+      }
+      .t4t1{
+        position:absolute;
+        left:20px;
+      }
+      .t4t2{
+        position:absolute;
+        left:70px;
+        top:-7px;
+        white-space: nowrap;
+      }
+      .t5{
+        position:absolute;
+        top:130px;
+        left:25px;
+        background:url('../../staticfiles/images/5.png') no-repeat;
+        height:60px;
+        width:70px;
+        text-align:center;
+      }
+      .t5t1{
+        position:absolute;
+        left:23px;
+        top:5px;
+      }
+      .t5t2{
+        position:absolute;
+        left:55px;
+        top:5px;
+        white-space:nowrap;
+      }
+      .question_pallet{
+        position:absolute;
+        background:red;
+        top:210px;
+        width:100%;
+        height:60%;
+        margin: 0 auto;
+      }
+      .qbuttons{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        padding:40px;
+        background-color:green;
+      }
+      .qbuttons div{
+      }
+      .qbuttons a{
+        position: relative;
+        background:url('../../staticfiles/images/3.png') no-repeat;
+        height:60px;
+        width:60px;
+        text-align:center;
+      }
+      .qbuttons a:hover{
+        cursor:pointer;
+      }
+      .qbuttons p{
+        position:relative;
+        left:-10%;
+
+      }
+      .choice table{
+        position: absolute;
+        max-width:200px;
+
+      }
+      .choices td{
+        max-width: 300px;
+        background-color: blue;
+        word-break: break-all;
+      }
+
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="outside">
+      <div class="level1">
+        <div class="l1l1">
+        </div>
+      </div>
+      <div class="qdetails">
+        <p class="qd1">Question Type: Multiple Choice</p>
+        <p class="qmarks"> Marks for correct answer 1m | Negative mark 1/3</p>
+      </div>
+      <div class="question_box">
+        <div class="question">
+          Q1. Consider the functions <br>
+          <ol type="I">
+            <li> \(e^{-x}\) </li>
+            <li>\( x^2 - sin{x}\)</li>
+            <li>\(\sqrt{x^3+1}\)</li>
+          </ol>
+          \((30)_{7}\)
+          OPTIONAL IMAGE
+        </div>
+
+        <div class="choices">
+          <table>
+            <tr>
+              <td><input type="radio" id="male" name="gender" value="c1"></td>
+              <td><label for="c1">
+                    choice1
+                    </label></td>
+            </tr>
+            <tr>
+              <td><input type="radio" id="male" name="gender" value="c2"></td>
+              <td><label for="c2">
+                    choice2
+                  </label><br></td>
+            </tr>
+            <tr>
+              <td><input type="radio" id="male" name="gender" value="c3"></td>
+              <td><label for="c3">
+                    choice3
+                  </label><br></td>
+            </tr>
+            <tr>
+              <td><input type="radio" id="male" name="gender" value="c4"></td>
+              <td><label for="male">
+                      choice4
+                  </label></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="level3">
+        <div class="figs">
+          <div class="t1"><p class="t1t1">0</p> <p class="t1t2">Answered</p></div>
+          <div class="t2"><p class="t2t1">0</p> <p class="t2t2">Not Answered</p></div>
+          <div class="t3"><p class="t3t1">0</p> <p class="t3t2">Not visited</p></div>
+          <div class="t4"><p class="t4t1">0</p> <p class="t4t2">Marked for <br>review</p></div>
+          <div class="t5"><p class="t5t1">0</p> <p class="t5t2"> Answered but Marked for review</p></div>
+        </div>
+        <div class="question_pallet">
+          <div class="qbuttons">
+            <a type="button"><div id="q1"><p>01</p></div></a>
+            <a type="button"><div id="q2"><p>01</p></div></a>
+            <a type="button"><div id="q3"><p>01</p></div></a>
+            <a type="button"><div id="q4"><p>01</p></div></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

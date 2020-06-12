@@ -1,0 +1,47 @@
+ <table id="filters">
+
+     <tr>
+         <td>
+         {%ifequal choice 2%}
+         Choose Subject:
+         {%endifequal%}
+         </td>
+     </tr>
+     <tr><td>
+        <div class="custom-select">
+            <select id="sub">
+              <option value="0">Select Subject</optionvalue>
+              {% for i in subjects%}
+              <option value="{{forloop.counter0|add:'1'}}">{{i.sub_name}}</option>
+              {%endfor%}
+            </select>
+          </div>
+     </td></tr>
+
+     <tr>
+         <td>
+         Difficulty:
+         </td>
+     </tr>
+     <tr><td>
+        <div class="custom-select">
+            <select id="diff">
+              <option value="0">Select Difficulty level</option>
+              <option value="1">Mixed</option>
+              <option value="2">Easy</option>
+              <option value="3">Medium</option>
+              <option value="4">Hard</option>
+              <option value="5">Very Hard</option>
+
+            </select>
+          </div>
+     </td></tr>
+    <tr>
+         <td>
+             <button type="submit" id="get_test">Get tests</button>
+         </td>
+     </tr>
+ </table>
+ <table>
+
+ </table>

@@ -1,0 +1,12 @@
+{%extends 'base_q.html'%}
+{%load static%}
+
+{% block content%}
+<script src="{%static '/js/index.js'%}?v=<?=time();?"></script>
+{% ifequal login 1 %}
+<h1>Hello world {{user.fname}}</h1>
+
+{%else%}
+<h1>Hello world guest</h1>
+{%endifequal%}
+{%endblock%}

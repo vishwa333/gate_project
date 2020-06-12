@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <script src="{%static '/js/jquery-3.4.1.min.js'%}"></script>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/7/w3.css">
+      <link rel="stylesheet" href="{%static '/css/test_page.css'%}?v=<?=time();?">
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="{%static '/js/test_page.js'%}?v=<?=time();?"></script>
+      <meta charset="utf-8">
+      <title>GateGround</title>
+  </head>
+<body>
+    <div style="display:none" id="test_id">{{test_details.test_id}}</div>
+    <div class="outside">
+      <div class="level1">
+        <div class="l1l1">
+            <div id="title"> Welcome to GateGround</div>
+        </div>
+      </div>
+      <div class="qdetails">
+          <p class="qd1">Question Type: <span id="qtype">Multiple Choice</span></p>
+          <p class="qmarks"> Marks for correct answer <span id="pmarks">1m</span> | Negative mark <span id="nmarks">1/3</span></p>
+      </div>
+      <div class="question_box">
+        <table class="qdisplay">
+            <tr>
+            <td colspan="2">
+                <div class="question" id="question">
+                </div>
+            </td>
+            </tr>
+        <div class="choices">
+
+            <tr>
+
+              <td class="rbutton">
+                  <div class="crows"><input type="radio" name="choices_avl" value="a">
+                  </div>
+              </td>
+              <td>
+                  <div class="crows">
+                  <label for="c1">
+                    <span id="c1"></span>
+                    </label>
+                  </div>
+              </td>
+
+            </tr>
+            <tr>
+
+              <td class="rbutton">
+                  <div class="crows"><input type="radio" name="choices_avl" value="b">
+                  </div>
+              </td>
+              <td>
+                  <div class="crows">
+                  <label for="c2">
+                    <span id="c2"></span>
+                  </label><br>
+                  </div>
+              </td>
+
+            </tr>
+            <tr>
+
+              <td class="rbutton">
+                  <div class="crows"><input type="radio" name="choices_avl" value="c">
+                  </div>
+              </td>
+              <td>
+                  <div class="crows">
+                  <label for="c3">
+                    <span id="c3"></span>
+                  </label><br>
+                  </div>
+              </td>
+
+            </tr>
+            <tr>
+
+              <td class="rbutton">
+                  <div class="crows"><input type="radio" name="choices_avl" value="d">
+                  </div>
+              </td>
+              <td>
+                  <div class="crows">
+                  <label for="c4">
+                      <span id="c4"></span>
+                  </label>
+                  </div>
+              </td>
+
+            </tr>
+
+        </div>
+        </table>
+      </div>
+
+      <div class="level3">
+        <div class="figs">
+          <div class="t1"><p class="t1t1">0</p> <p class="t1t2">Answered</p></div>
+          <div class="t2"><p class="t2t1">0</p> <p class="t2t2">Not Answered</p></div>
+          <div class="t3"><p class="t3t1" id="t3t1">{{test_details.questions.all|length}}</p> <p class="t3t2">Not visited</p></div>
+          <div class="t4"><p class="t4t1">0</p> <p class="t4t2">Marked for <br>review</p></div>
+          <div class="t5"><p class="t5t1">0</p> <p class="t5t2"> Answered but Marked for review</p></div>
+        </div>
+        <div class="question_pallet">
+          <div class="qbuttons">
+            {%for i in test_details.questions.all%}
+              {%if forloop.counter0 <= 9 %}
+                <a type="button" class="qbut" id="{{forloop.counter0|add:'1'}}"><div><p>0{{forloop.counter0|add:"1"}}</p></div></a>
+              {%else%}
+                <a type="button" class="qbut" id="{{forloop.counter0|add:'1'}}"><div><p>{{forloop.counter0|add:"1"}}</p></div></a>
+              {%endif%}
+            {%endfor%}
+          </div>
+          <button id="submit_but">SUBMIT</button>
+        </div>
+      </div>
+      <div class="level4">
+          <div class="nbutton_div">
+              <button class="nbutton" id="1111">&#8592;  Previous </button>
+              <button class="nbutton" id="2222">Unanswer</button>
+              <button class="nbutton" id="3333">Mark/unmark for review</button>
+              <button class="nbutton" id="4444">Save</button>
+              <button class="nbutton" id="5555">Next  &#8594;</button>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

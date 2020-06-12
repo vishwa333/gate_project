@@ -1,0 +1,28 @@
+<!--{%ifequal test 1%}
+{{my_tests|length}} test available
+{%else%}
+{{my_tests|length}} tests available
+{%endifequal%}-->
+
+<table class="all_tests">
+    <tr>
+        <th>Sl.No.</th>
+        <th>No. of questions</th>
+        <th>max_marks</th>
+        <th>max_time</th>
+        <th></th>
+    </tr>
+     {%for i in my_tests%}
+    <tr>
+        <td>Test-{{forloop.counter0|add:'1'}}</td>
+        <td>{{i.questions.all|length}}</td>
+        <td>{{i.max_marks}}</td>
+        <td>{{i.max_time}} mins</td>
+        {%ifequal i.taken 0%}
+            <td><button style="width:100%;" id="{{i.test_id}}" class="take_test">Take test</button></td>
+        {%else%}
+            <td><button style="width:100%;" id="r{{i.test_id}}" class="view_result">View Result</button></td>
+        {%endifequal%}
+    </tr>
+     {%endfor%}
+</table>

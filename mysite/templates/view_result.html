@@ -1,0 +1,89 @@
+{%extends 'base_q.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{%static '/css/view_result.css'%}?v=<?=time();?">
+<link rel="stylesheet" href="{%static '/css/tests_modal.css'%}?v=<?=time();?">
+<link rel="stylesheet" href="{%static '/css/custom-select.css'%}?v=<?=time();?">
+<script src="{%static '/js/view_result.js'%}?v=<?=time();?"></script>
+<!--This is for the graph things
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<div>
+    <div class="left">left</div>
+    <div class="middle">
+        <table class="centerTable">
+            <tr>
+                <th class="selector"><button id="r1" type=submit value="1" class="table_button">Result</button></th>
+                <th class="selector"><button id="r2" type=submit value="2" class="table_button">Analysis</button></th>
+                <th class="selector"><button id="r3" type=submit value="3" class="table_button">Question_wise</button></th>
+                <th class="selector"><button id="r4" type=submit value="4" class="table_button">Results_comparison</button></th>
+            </tr>
+        </table>
+        <div>
+            <table class="markstable tab_border">
+                <tr>
+                    <td>Max. Marks</td>
+                    <td>{{details.total}}</td>
+                </tr>
+                <tr>
+                    <td>Marks</td>
+                    <td>{{details.marks}}</td>
+                </tr>
+                <tr>
+                    <td>Positive marks</td>
+                    <td>{{details.positive}}</td>
+                </tr>
+                <tr>
+                    <td>Negative marks</td>
+                    <td>{{details.negative}}</td>
+                </tr>
+            </table>
+            <table class="questionstable tab_border">
+                <tr>
+                    <td>Total Questions</td>
+                    <td>{{details.total_questions}}</td>
+                </tr>
+                <tr>
+                    <td>Attempted Questions</td>
+                    <td>{{details.attempted}}</td>
+                </tr>
+                <tr>
+                    <td>Correct answers</td>
+                    <td>{{details.correct}}</td>
+                </tr>
+                <tr>
+                    <td>Accuracy answers</td>
+                    <td>{{details.accuracy}}%</td>
+                </tr>
+            </table>
+            <table class="rank table tab_border">
+                <tr>
+                    <td>Total Students</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Rank</td>
+                    <td>{{details.rank}}</td>
+                </tr>
+                <tr>
+                    <td>empty</td>
+                    <td>empty</td>
+                </tr>
+                <tr>
+                    <td>empty</td>
+                    <td>empty</td>
+                </tr>
+            </table>
+            <div id="for_pie"><canvas id="myChart"></canvas></div>
+
+        </div>
+    </div>
+    <div class="right">right</div>
+    How to view the result
+</div>
+
+{% endblock %}
+

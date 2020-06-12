@@ -1,0 +1,39 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>VISHWAS</title>
+</head>
+<link rel="stylesheet" href="{%static '/css/top_bar.css'%}">
+<link rel="stylesheet" href="{%static '/css/my_signupoverlay.css'%}">
+<script src="{%static '/js/index.js'%}"></script>
+<script src="{%static '/js/jquery-3.4.1.min.js'%}"></script>
+<body onload="myfun()">
+
+
+<div class="topnav">
+  <div class="buttonsmenu">
+  <a onclick="openNav()">Signup/login</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a class="active" href="#home">Home</a>
+  </div>
+</div>
+
+
+<h1>Hello world Vishwa {{name}}</h1>
+
+<form action="signup" method="post" bgcolor="green">
+
+	{%csrf_token%}
+	Enter First_name : <input type="text" name="n1" placeholder="First name"><br>
+	Enter email : <input type="email" name="n2" placeholder="Email"><br>
+    Enter password : <input type="password" name="n2" placeholder="Password"><br>
+    Confirm Password : <input type="password" name="n2" placeholder="Confirm Password"><br>
+	<input type="submit">
+</form>
+
+</body>
+</html>
