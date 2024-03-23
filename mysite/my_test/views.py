@@ -7,7 +7,8 @@ from django.http import HttpResponse
 
 
 def redirect_if_not_login(request):
-	redirect_if_not_login(request)
+	if not request.user.is_authenticated:
+		return redirect("/")
 	
 def index(request):
 	login=0
