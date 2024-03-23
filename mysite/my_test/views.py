@@ -6,7 +6,9 @@ from questions.models import *
 from django.http import HttpResponse
 
 
-
+def redirect_if_not_login(request):
+	redirect_if_not_login(request)
+	
 def index(request):
 	login=0
 	username= None
@@ -26,8 +28,7 @@ def add(request):
 	return render(request,'results.html',{"n":n, "user":u1})
 
 def step2(request):
-	if not request.user.is_authenticated:
-		return redirect("/")
+	redirect_if_not_login(request)
 	o1 = int(request.GET['o1'])
 	ttype ="Not given"
 	choices = ["Chapter_wise","Subject_wise","Part_syllabus","Multi_sub","Full_length"]
@@ -44,8 +45,7 @@ def step2(request):
 	return render(request, 'step2.html', {"ttype":ttype})
 
 def step3(request):
-	if not request.user.is_authenticated:
-		return redirect("/")
+	redirect_if_not_login(request)
 	username = request.user
 	login = 1
 	o1 = int(request.GET['o1'])
@@ -84,8 +84,7 @@ def step3(request):
 	return render(request, 'step3.html', {"my_tests":my_tests})
 
 def tests(request):
-	if not request.user.is_authenticated:
-		return redirect("/")
+	redirect_if_not_login(request)
 	username = request.user
 	login = 1
 	tests = testtype.objects.all()
@@ -95,8 +94,7 @@ def tests(request):
 	return render(request, 'show_tests.html', {'user': username, "login": login,'types':tests})
 
 def start_test(request):
-	if not request.user.is_authenticated:
-		return redirect("/")
+	redirect_if_not_login(request)
 	username = request.user
 	login = 1
 	#id = int(request.GET['test_id'])
@@ -109,8 +107,7 @@ def start_test(request):
 	pass
 
 def get_question(request):
-	if not request.user.is_authenticated:
-		return redirect("/")
+	redirect_if_not_login(request)
 	username = request.user
 	login = 1
 	id = int(request.GET['test_id'])
@@ -120,8 +117,7 @@ def get_question(request):
 	return render(request, "question.html", {'question': question})
 
 def store_result(request):
-	if not request.user.is_authenticated:
-		return redirect("/")
+	redirect_if_not_login(request)
 	username = request.user
 	login = 1
 	id = int(request.POST['test_id'])
@@ -160,8 +156,7 @@ def store_result(request):
 ##The below is for the result analysis page
 
 def view_result(request):
-	if not request.user.is_authenticated:
-		return redirect("/")
+	redirect_if_not_login(request)
 	username = request.user
 	login = 1
 	#id = int(request.GET['test_id'])
