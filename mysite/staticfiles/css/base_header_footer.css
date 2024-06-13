@@ -1,0 +1,195 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure body takes up at least the full height of the viewport */
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 20px; /* Decrease padding to make the header smaller */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px; /* Decrease padding to make the footer smaller */
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
+  margin-top: auto; /* Push the footer to the bottom */
+text-align: center; /* Align text content to the center */
+  
+}
+
+header .container {
+  display: flex; /* Use flexbox to align items */
+  justify-content: space-between; /* Space between title and menu */
+  align-items: center; /* Vertically center items */
+}
+
+header h1 {
+  font-size: 20px; /* Decrease font size of the title */
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+header nav ul li:first-child {
+  margin-left: 0;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Style for login/signup button */
+.login-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 8px 16px; /* Adjust padding as needed */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-container input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-content {
+  margin-top: 100px;
+  flex: 1;
+}
+
+
+
+/* Style for overlay button */
+.bluebutton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Adjust padding as needed */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bluebutton:hover {
+  background-color: #0056b3;
+}
+
+
+/* Styles for social links */
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links a img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Styles for contact info */
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 5px;
+}
+
+main {
+  flex: 1; /* Allow the main content area to grow and fill the remaining space */
+}

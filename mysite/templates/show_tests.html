@@ -1,83 +1,26 @@
-{%extends 'base_q.html' %}
-{% load static %}
+{% include 'base_q.html'%}
+{%load static%}
 
 {% block content %}
 <link rel="stylesheet" href="{%static '/css/tests.css'%}?v=<?=time();?">
-<link rel="stylesheet" href="{%static '/css/tests_modal.css'%}?v=<?=time();?">
-<link rel="stylesheet" href="{%static '/css/custom-select.css'%}?v=<?=time();?">
 <script src="{%static '/js/test.js'%}?v=<?=time();?"></script>
 
-<div class="types">
-
-    <table class="tbutton">
-        <tr>
+    <div class="test-container">
         {% for i in types%}
-         <td>
-         <button class="ttype w3-button w3-white w3-round-small" name="ttype" value="{{i.id}}">{{i.ttype}}</button>
-         </td>
+         <div class="test-type" id ="{{i.ttype}}">
+            <h2>{{i.ttype}} Tests</h2>
+            <p>{{i.description}}</p>
+            <a href="#">Explore Tests</a>
+             <div class="test-overlay">
+              <div class="test-overlay-content">
+                
+              </div>
+            </div>
+          </div>
         {%endfor%}
-        </tr>
-
-    </table>
-    <div class="first">
-        <div class="second">
-            <table class = "filtertab" id="filtertable">
-                <tr class="other_container">
-                    <td>
-                        This is for filter
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="third">
-            <table class ="teststab">
-                <tr class="other_container">
-
-                    <td class="tests_display">
-                        <span> This is for showing tests</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-     </div>
-</div>
-
-<!--<div class="show1">
-    <button id="myBtn">ShowOverlay</button>
-</div>-->
-<!-- The Modal -->
-<div id="show_test" class="test_overlay">
-
-  <!-- Modal content -->
-  <div class="test_overlay_box">
-    <div class="test-header">
-      <div class="first">
-        <span>This is the first thing</span>
-      </div>
-      <div class="middle">
-      <span class="header-content">Test Header</span>
-      </div>
-
-      <div class="last">
-        <span class="close">&times;</span>
-      </div>
     </div>
-    <div class="test-body">
-     <div class="tbutton">
-    {% for i in types%}
-     <button class="w3-button w3-white w3-round-xlarge" type="submit" name="ttype" value="{{i.id}}">{{i.ttype}}</button>
-    {%endfor%}
-    </div>
-    </div>
-    <div class="test-footer">
-          <div class="first"></div>
-          <div class="middle">Yes</div>
-          <div class="last">Submit</div>
 
-    </div>
-  </div>
-
-</div>
 
 {% endblock %}
 
+{% include 'footer.html' %}

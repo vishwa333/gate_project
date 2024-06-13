@@ -1,0 +1,35 @@
+{%load static%}
+{% include 'base_q.html'%}
+
+{% block content %}
+<link rel="stylesheet" href="{%static '/css/tests_v2.css'%}?v=<?=time();?">
+<link rel="stylesheet" href="{%static '/css/topic_wise.css'%}?v=<?=time();?">
+<script src="{%static '/js/test_v2.js'%}?v=<?=time();?"></script>
+<script src="{%static '/js/topic_wise.js'%}?v=<?=time();?"></script>
+
+
+  <div class="test-menu content-child" id="menu">
+    <!-- Menu items -->
+    {% for i in types%}
+    {% if i.ttype == "Topic Wise" %}  
+    <div class="test-menu-item active" onclick="changeContent(this, '{{i.ttype}}')"><span>{{i.ttype}}</span></div>
+    {%else%}
+    <div class="test-menu-item" onclick="changeContent(this, '{{i.ttype}}')"><span>{{i.ttype}}</span></div>
+    {%endif%}
+    {%endfor%}
+  </div>
+  <!-- Content -->
+  <div class="test-content content-child" id="test-content">
+    <h1>Main Content Area</h1>
+    <p>This is the Topic Wise content.</p>
+  </div>  
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <img src="{%static '/images/loading.gif'%}" alt="Loading">
+  </div>
+
+
+{% endblock %}
+
+{% include 'footer.html' %}

@@ -1,0 +1,37 @@
+<div class="topic_wise">
+    <h1>Topic Wise Tests</h1>
+    <div class="form-group">
+      <div class="select-wrapper">
+        <label for="subject">Subject</label>
+        <select name="subject" id="subject">
+          <option value="math">Mathematics</option>
+          <option value="physics">Physics</option>
+          <option value="chemistry">Chemistry</option>
+        </select>
+      </div>
+      <div class="select-wrapper">
+        <label for="chapter">Chapter</label>
+        <select name="chapter" id="chapter">
+          <!-- Chapters will be dynamically inserted here -->
+        </select>
+      </div>
+      <button id="submit-btn">Submit</button>
+    </div>
+  
+    <div class="test-content">
+      <h2 id="table-title">Mathematics - Chapter 1</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Topic Name</th>
+            <th>Number of Questions</th>
+            <th>Max Marks</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="test-data">
+          <!-- Test data will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+    </div>

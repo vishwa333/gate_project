@@ -12,6 +12,7 @@ from accounts.models import *
 
 class testtype(models.Model):
     ttype = models.CharField(max_length=50)
+    description = models.CharField(max_length=250,default="This is description")
     pass
 
 class test(models.Model):

@@ -28,6 +28,27 @@ def add(request):
 	u1.name = "Vishwa"
 	return render(request,'results.html',{"n":n, "user":u1})
 
+def get_subjects_list(request):
+	all_subs = subject.objects.all()
+	return render(request,'subjects_list.html',{"subjects":all_subs})
+
+def get_chapters_list(request):
+	subject = request.GET['subject']
+	all_subs = subject.objects.all()
+	return render(request,'subjects_list.html',{"subjects":all_subs})
+
+
+def get_topic(request):
+	all_subs = subject.objects.all()
+	return render(request,'subjects_list.html',{"subjects":all_subs})
+
+
+
+def get_initial_topic_wise(request):
+	
+	return render(request,'topic_wise.html',{})
+
+
 def step2(request):
 	redirect_if_not_login(request)
 	o1 = int(request.GET['o1'])
@@ -93,6 +114,13 @@ def tests(request):
 	#qids = test_questions.objects.find(test_id=tests[0].test_id)
 	#print("Here",qids)
 	return render(request, 'show_tests.html', {'user': username, "login": login,'types':tests})
+
+def tests_v2(request):
+	redirect_if_not_login(request)
+	username = request.user
+	login = 1
+	tests = testtype.objects.all()
+	return render(request, 'show_tests_v2.html', {'user': username, "login": login,'types':tests})
 
 def start_test(request):
 	redirect_if_not_login(request)
@@ -175,3 +203,4 @@ def view_result(request):
 	details["wrongly_attempted"] = len(test_responses.objects.filter(test_id=id, user_id=username, correctness="False"))
 	details["accuracy"] = (100*details["correct"])/details["attempted"]
 	return render(request, "view_result.html", {'user': username, "login": login, "details":details })
+

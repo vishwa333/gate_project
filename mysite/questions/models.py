@@ -17,7 +17,7 @@ class chapter(models.Model):
 
 class topic(models.Model):
     sub_code = models.ForeignKey(chapter,default='102', on_delete=models.SET_DEFAULT)
-    topic_code = models.CharField(max_length=3, primary_key=True)
+    topic_code = models.CharField(max_length=6, primary_key=True)
     topic_name = models.CharField(max_length=50)
     def __str__(self):
         return self.topic_name
@@ -34,7 +34,7 @@ class question(models.Model):
     choice4 = models.CharField(max_length=100)
     subject = models.ForeignKey(subject,default='101', on_delete=models.SET_DEFAULT)
     chapter = models.ForeignKey(chapter,default='102', on_delete=models.SET_DEFAULT)
-    topic = models.CharField(max_length=500,blank=True)
+    topic = models.ForeignKey(topic,default="unassigned",on_delete=models.SET_DEFAULT)
     marks = models.IntegerField(choices=[(1, 1), (2, 2), (3, 3)])
     negative = models.FloatField(choices=[(-0.33, -0.33), (0, 0), (-0.66, -0.66)])
     diff_level = models.CharField(max_length=20,choices=[('Easy', 'Easy'), ('Medium', 'Medium'), ('Hard', 'Hard'), ('VeryHard', 'VeryHard')])

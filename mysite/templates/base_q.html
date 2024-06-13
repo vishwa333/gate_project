@@ -2,83 +2,61 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>VISHWAS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE CS by Vishwa's Classes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{%static '/css/base_header_footer.css'%}?v=<?=time();?">
+    <script src="{%static '/js/jquery-3.4.1.min.js'%}"></script> <!-- jQuery library for ajax request-->
 </head>
-<link rel="stylesheet" href="{%static '/css/index.css'%}?v=<?=time();?">
-<link rel="stylesheet" href="{%static '/css/my_signupoverlay.css'%}?v=<?=time();?">
-<script src="{%static '/js/jquery-3.4.1.min.js'%}"></script>
-<script src="{%static '/js/index.js'%}?v=<?=time();?"></script>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
+    <header>
+        <div class="container">
+            <h1>GATE CS by Vishwa's Classes</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="tests">Test Series</a></li>
+                    <li><a href="#">About Us</a></li>
+                    {%ifequal login 1%}
+                    <li><a href="#">My Learning</a></li>
+                    <li><a class="bluebutton" href="logout" id="logout">Logout</a></li>
+                    {%else%}
+                    <li><button id="overlayBtn" class="bluebutton" onclick="openOverlay()">Login/Signup</button></li>
+                    {%endifequal%}
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-
-<div class="w3-bar w3-white">
-  {% ifequal login 1 %}
-    <div class="w3-dropdown-hover w3-white" style="float:right;">
-      <button class="w3-button w3-white">Hi {{user.fname}}</button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4 " style="right: 1%;">
-        <a href="#" class="w3-bar-item w3-button w3-white">Profile</a>
-        <a href="#" class="w3-bar-item w3-button w3-white">Tests Taken</a>
-        <a href="#" class="w3-bar-item w3-button w3-white">Link 3</a>
-        <a href="logout" class="w3-bar-item w3-button w3-white" id="logout">Logout</a>
-      </div>
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <span class="closeBtn" onclick="closeOverlay()">&times;</span>
+            <div id="login-form" class="form-container">
+                <h2>Login</h2>
+                <form action="login" method="post">
+                  {%csrf_token%}
+                    <input type="text" name="email" placeholder="Username" required>
+                    <input type="password" name="pass" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+            </div>
+            <div id="signup-form" class="form-container hidden">
+                <h2>Sign Up</h2>
+                <form action="signup" method="post">
+                  {%csrf_token%}
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </div>
     </div>
-
-  {%else%}
-    <!--<a onclick="openNav()" class="w3-bar-item w3-button w3-right" id="signup">Signup/login</a> -->
-    <button class="w3-bar-item w3-button w3-right" id="login-btn">Login/Sign Up</button>
-  {%endifequal%}
-  
-  <a href="#about" class="w3-bar-item w3-button w3-right" id="Help">Help</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-right" id="contact">Contact</a>
-  <a class="active w3-bar-item w3-button w3-right" href="/" id="home">Home</a>
-  {%ifequal login 1%}
-    <a href="/tests" class="w3-bar-item w3-button w3-right" id="tests">Tests</a>
-    <a class="displayname w3-bar-item w3-button w3-right" > Hello {{user.fname}}</a>
-  {%else%}
-    <a class="displayname w3-bar-item w3-button w3-right"> Hello Guest</a>
-
-  {%endifequal%}
-  </div>
-
-</div>
-
-
-<div class="overlay" id="overlay" style="display:none">
-  <div class="overlay-content">
-      <button class="close-btn" id="close-btn">×</button>
-      <div id="login-form">
-          <h2>Login</h2>
-          <form action="login" method="post">
-            {%csrf_token%}
-              <input type="text" name="email" placeholder="Username" required>
-              <input type="password" name="pass" placeholder="Password" required>
-              <button type="submit">Login</button>
-          </form>
-          <p>Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
-      </div>
-      <div id="signup-form" style="display: none;">
-          <h2>Sign Up</h2>
-          <form action="signup" method="post">
-              {%csrf_token%}
-              <input type="text" placeholder="Username" required>
-              <input type="email" placeholder="Email" required>
-              <input type="password" placeholder="Password" required>
-              <button type="submit">Sign Up</button>
-          </form>
-          <p>Already have an account? <a href="#" id="login-link">Login</a></p>
-      </div>
-  </div>
-</div>
-
-
-<!-- overlay ends here -->
-{% block content %}
-
-{% endblock %}
-</body>
-</html>
+<main>
+  <div class="main-content">

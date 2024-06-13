@@ -1,0 +1,96 @@
+
+  .topic_wise h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  /* Form group styles */
+  .topic_wise .form-group {
+    display: inline-block;
+  }
+  .topic_wise label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  /* Styling for the select elements */
+  .topic_wise .select-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .topic_wise .select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 250px; /* Increase width */
+    padding: 12px; /* Increase padding */
+    font-size: 16px; /* Increase font size */
+    border-radius: 0; /* Make it rectangular */
+    border: 2px solid #007bff; /* Border color */
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Styling for when the select is focused */
+  .topic_wise .select-wrapper select:focus {
+    border-color: #0056b3; /* Change border color on focus */
+  }
+  
+  /* Styling for when the select is open */
+  .select-wrapper select:active,
+  .topic_wise .select-wrapper select:hover {
+    background-color: #f9f9f9; /* Change background color on hover */
+  }
+  
+  /* Hide the arrow icon */
+  .topic_wise .select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /* Button styles */
+  .topic_wise button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .topic_wise button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table styles */
+  .topic_wise .test-content {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .topic_wise table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .topic_wise th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  .topic_wise th {
+    background-color: #f2f2f2;
+  }
+  

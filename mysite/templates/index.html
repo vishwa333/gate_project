@@ -1,12 +1,18 @@
-{%extends 'base_q.html'%}
+{% include 'base_q.html'%}
 {%load static%}
 
 {% block content%}
 <script src="{%static '/js/index.js'%}?v=<?=time();?"></script>
 {% ifequal login 1 %}
-<h1>Hello world {{user.fname}}</h1>
-
+<h1>Hello {{user.fname}}</h1>
+<h2>Welcome to GATE Exam Preparation</h2>
+<p>Your gateway to success in the GATE exam!</p><br>
+<p> Get personalised content for preparation</p>
+<p> Help you prepare by identifying the areas which you are weak powered by AI</p>
 {%else%}
-<h1>Hello world guest  123</h1>
+<h1>Hello world guest</h1>
 {%endifequal%}
 {%endblock%}
+
+
+{% include 'footer.html' %}
