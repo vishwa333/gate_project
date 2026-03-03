@@ -110,6 +110,7 @@ def tests(request):
 	username = request.user
 	login = 1
 	tests = testtype.objects.all()
+	print(f"Hello {username}")
 	#print("Test length is ",len(tests))
 	#qids = test_questions.objects.find(test_id=tests[0].test_id)
 	#print("Here",qids)
